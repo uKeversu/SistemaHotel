@@ -66,7 +66,11 @@ public class TelaLogin extends javax.swing.JFrame {
         Senha.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         Senha.setText("Senha:");
 
+        txtUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        btnLogin.setBackground(new java.awt.Color(255, 0, 0));
         btnLogin.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setLabel("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +78,11 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        SenhaLogin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        btnLogin1.setBackground(new java.awt.Color(255, 0, 0));
         btnLogin1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnLogin1.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin1.setText("Sair");
         btnLogin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
