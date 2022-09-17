@@ -16,6 +16,9 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        
+        setExtendedState(MAXIMIZED_BOTH);
+        
     }
 
     /**
@@ -28,51 +31,82 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCad = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         menuFunCad = new javax.swing.JMenuItem();
         menuFunCon = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         menuQuartCad = new javax.swing.JMenuItem();
         menuQuartCon = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        menuHosCad = new javax.swing.JMenuItem();
-        menuHosCon = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        menuProdCad = new javax.swing.JMenuItem();
+        menuProdCon = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        menuQuartDisp = new javax.swing.JMenuItem();
-        menuQuartOcup = new javax.swing.JMenuItem();
+        menuResCon = new javax.swing.JMenuItem();
+        menuResFin = new javax.swing.JMenuItem();
+        menuResAdd = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        menuVendProd = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        menuOpFund = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Wayz - Home");
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 0, 0, new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 198, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 472, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 550, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(255, 0, 0));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        jMenuBar1.setMargin(new java.awt.Insets(0, 0, 2, 0));
+        jMenuBar1.setName(""); // NOI18N
 
-        menuCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/PapelCanetaIcone.png"))); // NOI18N
+        menuCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Cadastrar_25x25.png"))); // NOI18N
         menuCad.setText("Cadastros   |");
+        menuCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/RegistrarBoneco_20x20.png"))); // NOI18N
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Funcionarios_20x20.png"))); // NOI18N
         jMenu5.setText("Funcionários");
+        jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         menuFunCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuFunCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BonecoPlus_20x20.png"))); // NOI18N
         menuFunCad.setText("Cadastrar");
+        menuFunCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuFunCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuFunCadActionPerformed(evt);
@@ -81,87 +115,148 @@ public class Home extends javax.swing.JFrame {
         jMenu5.add(menuFunCad);
 
         menuFunCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuFunCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa_20x20.png"))); // NOI18N
         menuFunCon.setText("Consultar");
+        menuFunCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu5.add(menuFunCon);
 
         menuCad.add(jMenu5);
 
-        jMenu6.setText("Quartos");
-        jMenu6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Casa_20x20.png"))); // NOI18N
+        jMenu7.setText("Quartos");
+        jMenu7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         menuQuartCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuQuartCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home_plus_outline_icon_139461_20x20.png"))); // NOI18N
         menuQuartCad.setText("Cadastrar");
-        jMenu6.add(menuQuartCad);
+        menuQuartCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuQuartCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuQuartCadActionPerformed(evt);
+            }
+        });
+        jMenu7.add(menuQuartCad);
 
         menuQuartCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuQuartCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa_20x20.png"))); // NOI18N
         menuQuartCon.setText("Consultar");
+        menuQuartCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuQuartCon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuQuartConActionPerformed(evt);
             }
         });
-        jMenu6.add(menuQuartCon);
-
-        menuCad.add(jMenu6);
-
-        jMenu7.setText("Hóspedes");
-        jMenu7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-
-        menuHosCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuHosCad.setText("Cadastrar");
-        menuHosCad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuHosCadActionPerformed(evt);
-            }
-        });
-        jMenu7.add(menuHosCad);
-
-        menuHosCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuHosCon.setText("Consultar");
-        menuHosCon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuHosConActionPerformed(evt);
-            }
-        });
-        jMenu7.add(menuHosCon);
+        jMenu7.add(menuQuartCon);
 
         menuCad.add(jMenu7);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ComprasICon_1_20x20.png"))); // NOI18N
+        jMenu6.setText("Produtos");
+        jMenu6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        menuProdCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuProdCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/AdicionarCarrinho_20x20.png"))); // NOI18N
+        menuProdCad.setText("Cadastrar");
+        menuProdCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu6.add(menuProdCad);
+
+        menuProdCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuProdCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa_20x20.png"))); // NOI18N
+        menuProdCon.setText("Consultar");
+        menuProdCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu6.add(menuProdCon);
+
+        menuCad.add(jMenu6);
+
         jMenuBar1.add(menuCad);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Reserva_25x25.png"))); // NOI18N
         jMenu2.setText("Reservas   |");
+        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jMenu8.setText("Quartos");
-        jMenu8.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-
-        menuQuartDisp.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuQuartDisp.setText("Quartos disponíveis");
-        menuQuartDisp.addActionListener(new java.awt.event.ActionListener() {
+        menuResCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuResCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ConsultarReserva_20x20.png"))); // NOI18N
+        menuResCon.setText("Consultar");
+        menuResCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuResCon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuQuartDispActionPerformed(evt);
+                menuResConActionPerformed(evt);
             }
         });
-        jMenu8.add(menuQuartDisp);
+        jMenu2.add(menuResCon);
 
-        menuQuartOcup.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuQuartOcup.setText("Quartos ocupados");
-        jMenu8.add(menuQuartOcup);
+        menuResFin.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuResFin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FinalizarReserva_20x20.png"))); // NOI18N
+        menuResFin.setText("Finalizar");
+        menuResFin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu2.add(menuResFin);
 
-        jMenu2.add(jMenu8);
+        menuResAdd.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuResAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/AdicionarReserva_20x20.png"))); // NOI18N
+        menuResAdd.setText("Hospedar");
+        menuResAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuResAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuResAddActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuResAdd);
 
         jMenuBar1.add(jMenu2);
 
-        jMenu1.setText("Venda de produtos   |");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Carrinho_25x25.png"))); // NOI18N
+        jMenu1.setText("Vendas   |");
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        menuVendProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Caixa_20x20.png"))); // NOI18N
+        menuVendProd.setText("Produtos");
+        menuVendProd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuVendProd.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jMenu1.add(menuVendProd);
+
         jMenuBar1.add(jMenu1);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relatório_25x25.png"))); // NOI18N
         jMenu3.setText("Relatórios   |");
+        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jMenuItem1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/DoisBoneco_20x20.png"))); // NOI18N
+        jMenuItem1.setText("Hóspedes");
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Reserva_20x20.png"))); // NOI18N
+        jMenuItem2.setText("Reservas");
+        jMenu3.add(jMenuItem2);
+
+        jMenuItem3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/CarrinhoComprado_20x20.png"))); // NOI18N
+        jMenuItem3.setText("Vendas");
+        jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Moeda_20x20.png"))); // NOI18N
+        jMenuItem4.setText("Financeiro");
+        jMenu3.add(jMenuItem4);
+
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/SettingsICon_25x25_1_20x20.png"))); // NOI18N
         jMenu4.setText("Configurações");
+        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        menuOpFund.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        menuOpFund.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/PlanoDeFundo_20x20.png"))); // NOI18N
+        menuOpFund.setText("Plano de fundo");
+        menuOpFund.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu4.add(menuOpFund);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -185,21 +280,21 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuFunCadActionPerformed
 
+    private void menuQuartCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuQuartCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuQuartCadActionPerformed
+
     private void menuQuartConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuQuartConActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuQuartConActionPerformed
 
-    private void menuHosCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuHosCadActionPerformed
+    private void menuResConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuResConActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_menuHosCadActionPerformed
+    }//GEN-LAST:event_menuResConActionPerformed
 
-    private void menuHosConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuHosConActionPerformed
+    private void menuResAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuResAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_menuHosConActionPerformed
-
-    private void menuQuartDispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuQuartDispActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuQuartDispActionPerformed
+    }//GEN-LAST:event_menuResAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,17 +339,24 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu menuCad;
     private javax.swing.JMenuItem menuFunCad;
     private javax.swing.JMenuItem menuFunCon;
-    private javax.swing.JMenuItem menuHosCad;
-    private javax.swing.JMenuItem menuHosCon;
+    private javax.swing.JMenuItem menuOpFund;
+    private javax.swing.JMenuItem menuProdCad;
+    private javax.swing.JMenuItem menuProdCon;
     private javax.swing.JMenuItem menuQuartCad;
     private javax.swing.JMenuItem menuQuartCon;
-    private javax.swing.JMenuItem menuQuartDisp;
-    private javax.swing.JMenuItem menuQuartOcup;
+    private javax.swing.JMenuItem menuResAdd;
+    private javax.swing.JMenuItem menuResCon;
+    private javax.swing.JMenuItem menuResFin;
+    private javax.swing.JMenu menuVendProd;
     // End of variables declaration//GEN-END:variables
 }
