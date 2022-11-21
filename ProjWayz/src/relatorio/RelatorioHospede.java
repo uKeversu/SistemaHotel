@@ -145,10 +145,7 @@ public class RelatorioHospede extends javax.swing.JInternalFrame {
         tabelaHospede.setForeground(new java.awt.Color(255, 255, 255));
         tabelaHospede.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "NOME", "CPF", "TELEFONE", "E-MAIL"

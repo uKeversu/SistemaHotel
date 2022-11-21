@@ -13,6 +13,10 @@ import javax.swing.JOptionPane;
 import consulta.ConsultaFuncionario;
 import consulta.ConsultaProduto;
 import consulta.ConsultaQuartos;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
+import javax.swing.Timer;
 import reservas.Hospedar;
 import relatorio.RelatorioHospede;
 
@@ -37,6 +41,9 @@ public class Home extends javax.swing.JFrame {
         conexao = Conexao.conector();
 
         nome_usuario.setText(TelaLogin.nm_user);
+        
+        Timer timer = new Timer(1000, new hora());
+timer.start();
         
     }
 
@@ -65,6 +72,13 @@ public class Home extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         nome_usuario = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        lblHorario = new javax.swing.JLabel();
         Desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCad = new javax.swing.JMenu();
@@ -106,55 +120,113 @@ public class Home extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/account_avatar_face_man_people_profile_user_icon_123197 (1).png"))); // NOI18N
 
-        nome_usuario.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        nome_usuario.setForeground(new java.awt.Color(0, 0, 0));
+        nome_usuario.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         nome_usuario.setText("Usuário");
 
         btnLogout.setBackground(new java.awt.Color(255, 255, 255));
-        btnLogout.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        btnLogout.setForeground(new java.awt.Color(0, 0, 0));
-        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LogoutIcon.png"))); // NOI18N
+        btnLogout.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LogOut_15x15.png"))); // NOI18N
         btnLogout.setText("Logout ");
         btnLogout.setBorder(null);
+        btnLogout.setBorderPainted(false);
         btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setOpaque(false);
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
 
+        jCalendar1.setBackground(new java.awt.Color(0, 0, 0));
+        jCalendar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jCalendar1.setDecorationBackgroundColor(new java.awt.Color(255, 255, 255));
+        jCalendar1.setDecorationBordersVisible(true);
+        jCalendar1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jCalendar1.setOpaque(false);
+        jCalendar1.setWeekOfYearVisible(false);
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel2.setText("CALENDÁRIO");
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel3.setText("HORÁRIO DE BRASÍLIA");
+
+        lblHorario.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblHorario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHorario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
+            .addComponent(jSeparator2)
+            .addComponent(jSeparator3)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(26, 26, 26))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(LogoWayz, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnLogout))
-                            .addGap(42, 42, 42)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(nome_usuario)
-                        .addGap(56, 56, 56))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(LogoWayz, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(142, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(108, 108, 108))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btnLogout))
+                    .addComponent(nome_usuario))
+                .addGap(128, 128, 128))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nome_usuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnLogout)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                 .addComponent(LogoWayz, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Desktop.setLayout(new javax.swing.BoxLayout(Desktop, javax.swing.BoxLayout.LINE_AXIS));
@@ -166,21 +238,20 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 492, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 485, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(201, 201, 201)
                 .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(490, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setBorder(new javax.swing.border.MatteBorder(null));
-        jMenuBar1.setForeground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jMenuBar1.setMargin(new java.awt.Insets(0, 0, 2, 0));
         jMenuBar1.setName(""); // NOI18N
@@ -188,7 +259,6 @@ public class Home extends javax.swing.JFrame {
 
         menuCad.setBackground(new java.awt.Color(255, 0, 0));
         menuCad.setBorder(null);
-        menuCad.setForeground(new java.awt.Color(0, 0, 0));
         menuCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Cadastrar_25x25.png"))); // NOI18N
         menuCad.setText("Cadastros   |");
         menuCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -196,7 +266,6 @@ public class Home extends javax.swing.JFrame {
         menuCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jMenu5.setBackground(new java.awt.Color(255, 255, 255));
-        jMenu5.setForeground(new java.awt.Color(0, 0, 0));
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Funcionarios_20x20.png"))); // NOI18N
         jMenu5.setText("Funcionários");
         jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -207,7 +276,6 @@ public class Home extends javax.swing.JFrame {
 
         menuFunCad.setBackground(new java.awt.Color(255, 255, 255));
         menuFunCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuFunCad.setForeground(new java.awt.Color(0, 0, 0));
         menuFunCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BonecoPlus_20x20.png"))); // NOI18N
         menuFunCad.setText("Cadastrar");
         menuFunCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -221,7 +289,6 @@ public class Home extends javax.swing.JFrame {
 
         menuFunCon.setBackground(new java.awt.Color(255, 255, 255));
         menuFunCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuFunCon.setForeground(new java.awt.Color(0, 0, 0));
         menuFunCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa_20x20.png"))); // NOI18N
         menuFunCon.setText("Consultar");
         menuFunCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -236,7 +303,6 @@ public class Home extends javax.swing.JFrame {
         menuCad.add(jMenu5);
 
         jMenu7.setBackground(new java.awt.Color(255, 255, 255));
-        jMenu7.setForeground(new java.awt.Color(0, 0, 0));
         jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Casa_20x20.png"))); // NOI18N
         jMenu7.setText("Quartos");
         jMenu7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -246,7 +312,6 @@ public class Home extends javax.swing.JFrame {
 
         menuQuartCad.setBackground(new java.awt.Color(255, 255, 255));
         menuQuartCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuQuartCad.setForeground(new java.awt.Color(0, 0, 0));
         menuQuartCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home_plus_outline_icon_139461_20x20.png"))); // NOI18N
         menuQuartCad.setText("Cadastrar");
         menuQuartCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -260,7 +325,6 @@ public class Home extends javax.swing.JFrame {
 
         menuQuartCon.setBackground(new java.awt.Color(255, 255, 255));
         menuQuartCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuQuartCon.setForeground(new java.awt.Color(0, 0, 0));
         menuQuartCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa_20x20.png"))); // NOI18N
         menuQuartCon.setText("Consultar");
         menuQuartCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -275,7 +339,6 @@ public class Home extends javax.swing.JFrame {
         menuCad.add(jMenu7);
 
         jMenu6.setBackground(new java.awt.Color(255, 255, 255));
-        jMenu6.setForeground(new java.awt.Color(0, 0, 0));
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ComprasICon_1_20x20.png"))); // NOI18N
         jMenu6.setText("Produtos");
         jMenu6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -284,7 +347,6 @@ public class Home extends javax.swing.JFrame {
 
         menuProdCad.setBackground(new java.awt.Color(255, 255, 255));
         menuProdCad.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuProdCad.setForeground(new java.awt.Color(0, 0, 0));
         menuProdCad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/AdicionarCarrinho_20x20.png"))); // NOI18N
         menuProdCad.setText("Cadastrar");
         menuProdCad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -298,7 +360,6 @@ public class Home extends javax.swing.JFrame {
 
         menuProdCon.setBackground(new java.awt.Color(255, 255, 255));
         menuProdCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuProdCon.setForeground(new java.awt.Color(0, 0, 0));
         menuProdCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa_20x20.png"))); // NOI18N
         menuProdCon.setText("Consultar");
         menuProdCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -316,7 +377,6 @@ public class Home extends javax.swing.JFrame {
 
         jMenu2.setBackground(new java.awt.Color(255, 0, 0));
         jMenu2.setBorder(null);
-        jMenu2.setForeground(new java.awt.Color(0, 0, 0));
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Reserva_25x25.png"))); // NOI18N
         jMenu2.setText("Reservas   |");
         jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -324,7 +384,6 @@ public class Home extends javax.swing.JFrame {
 
         menuResAdd.setBackground(new java.awt.Color(255, 255, 255));
         menuResAdd.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuResAdd.setForeground(new java.awt.Color(0, 0, 0));
         menuResAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/AdicionarReserva_20x20.png"))); // NOI18N
         menuResAdd.setText("Hospedar");
         menuResAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -338,7 +397,6 @@ public class Home extends javax.swing.JFrame {
 
         menuResCon.setBackground(new java.awt.Color(255, 255, 255));
         menuResCon.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuResCon.setForeground(new java.awt.Color(0, 0, 0));
         menuResCon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ConsultarReserva_20x20.png"))); // NOI18N
         menuResCon.setText("Consultar");
         menuResCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -352,7 +410,6 @@ public class Home extends javax.swing.JFrame {
 
         menuResFin.setBackground(new java.awt.Color(255, 255, 255));
         menuResFin.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuResFin.setForeground(new java.awt.Color(0, 0, 0));
         menuResFin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FinalizarReserva_20x20.png"))); // NOI18N
         menuResFin.setText("Finalizar");
         menuResFin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -362,14 +419,12 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu1.setBackground(new java.awt.Color(255, 0, 0));
-        jMenu1.setForeground(new java.awt.Color(0, 0, 0));
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Carrinho_25x25.png"))); // NOI18N
         jMenu1.setText("Vendas   |");
         jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         menuVendProd.setBackground(new java.awt.Color(255, 255, 255));
-        menuVendProd.setForeground(new java.awt.Color(0, 0, 0));
         menuVendProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cesta_produtos_20x20.png"))); // NOI18N
         menuVendProd.setText("Produtos");
         menuVendProd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -378,7 +433,6 @@ public class Home extends javax.swing.JFrame {
 
         jMenuItem5.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jMenuItem5.setForeground(new java.awt.Color(0, 0, 0));
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Caixa_20x20.png"))); // NOI18N
         jMenuItem5.setText("Estoque");
         jMenuItem5.setOpaque(true);
@@ -389,7 +443,6 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu3.setBackground(new java.awt.Color(255, 0, 0));
-        jMenu3.setForeground(new java.awt.Color(0, 0, 0));
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/relatório_25x25.png"))); // NOI18N
         jMenu3.setText("Relatórios   |");
         jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -397,7 +450,6 @@ public class Home extends javax.swing.JFrame {
 
         menuRelHosp.setBackground(new java.awt.Color(255, 255, 255));
         menuRelHosp.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuRelHosp.setForeground(new java.awt.Color(0, 0, 0));
         menuRelHosp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/DoisBoneco_20x20.png"))); // NOI18N
         menuRelHosp.setText("Hóspedes");
         menuRelHosp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -411,7 +463,6 @@ public class Home extends javax.swing.JFrame {
 
         jMenuItem2.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 0, 0));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Reserva_20x20.png"))); // NOI18N
         jMenuItem2.setText("Reservas");
         jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -420,7 +471,6 @@ public class Home extends javax.swing.JFrame {
 
         jMenuItem3.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jMenuItem3.setForeground(new java.awt.Color(0, 0, 0));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/CarrinhoComprado_20x20.png"))); // NOI18N
         jMenuItem3.setText("Vendas");
         jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -429,7 +479,6 @@ public class Home extends javax.swing.JFrame {
 
         jMenuItem4.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jMenuItem4.setForeground(new java.awt.Color(0, 0, 0));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Moeda_20x20.png"))); // NOI18N
         jMenuItem4.setText("Financeiro");
         jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -439,7 +488,6 @@ public class Home extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setBackground(new java.awt.Color(255, 0, 0));
-        jMenu4.setForeground(new java.awt.Color(0, 0, 0));
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/SettingsICon_25x25_1_20x20.png"))); // NOI18N
         jMenu4.setText("Configurações");
         jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -447,7 +495,6 @@ public class Home extends javax.swing.JFrame {
 
         menuOpFund.setBackground(new java.awt.Color(255, 255, 255));
         menuOpFund.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        menuOpFund.setForeground(new java.awt.Color(0, 0, 0));
         menuOpFund.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/PlanoDeFundo_20x20.png"))); // NOI18N
         menuOpFund.setText("Plano de fundo");
         menuOpFund.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -617,7 +664,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Desktop;
     private javax.swing.JLabel LogoWayz;
     private javax.swing.JButton btnLogout;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -632,6 +682,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel lblHorario;
     private javax.swing.JMenu menuCad;
     private javax.swing.JMenuItem menuFunCad;
     private javax.swing.JMenuItem menuFunCon;
@@ -647,4 +701,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenu menuVendProd;
     private javax.swing.JLabel nome_usuario;
     // End of variables declaration//GEN-END:variables
+
+class hora implements ActionListener{
+    @Override
+    
+    public void actionPerformed(ActionEvent e) {
+        Calendar now = Calendar.getInstance();
+        lblHorario.setText(String.format("%1$tH:%1$tM", now));
+    }
+}
+
 }
