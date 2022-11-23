@@ -172,7 +172,7 @@ public class ConsultaFuncionario extends javax.swing.JInternalFrame {
         );
 
         jPanel6.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
 
         jScrollPane1.setBorder(null);

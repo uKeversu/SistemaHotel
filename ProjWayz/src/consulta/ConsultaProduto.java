@@ -57,7 +57,7 @@ public class ConsultaProduto extends javax.swing.JInternalFrame {
             }
 
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Consultar Usuário" + erro);
+            JOptionPane.showMessageDialog(null, "Consultar Produtos" + erro);
         }
 
         return lista;
@@ -91,7 +91,7 @@ public class ConsultaProduto extends javax.swing.JInternalFrame {
             }
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Listar Quarto" + erro);
+            JOptionPane.showMessageDialog(null, "Listar Produto" + erro);
 
         }
     }
@@ -142,7 +142,7 @@ public class ConsultaProduto extends javax.swing.JInternalFrame {
         );
 
         jPanel6.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel6.setForeground(new java.awt.Color(51, 51, 51));
         jPanel6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jPanel6.setPreferredSize(new java.awt.Dimension(590, 430));

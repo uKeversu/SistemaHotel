@@ -13,6 +13,15 @@ public class User {
     private String txtFone;
     private String txtNascimento;
     private String Cargo;
+    private int grauDeAcesso;
+
+    public int getGrauDeAcesso() {
+        return grauDeAcesso;
+    }
+
+    public void setGrauDeAcesso(int grauDeAcesso) {
+        this.grauDeAcesso = grauDeAcesso;
+    }
     
     public int getId_user() {
         return id_user;

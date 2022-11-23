@@ -265,10 +265,7 @@
                               </Group>
                               <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <Component id="entrada" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -674,6 +671,9 @@
                 </Property>
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nmr_quartoActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

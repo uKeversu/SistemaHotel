@@ -113,14 +113,6 @@ public class Hospedar extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e);
         }
         
-        String upsql = "Update tb_quarto Set ocupacao = 'Ocupado' Where nmr_quarto = 171 ";
-        try{ 
-            pst = conexao.prepareStatement(upsql);
-        
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
         String mysql = "insert into tb_reservas(qtd_hospedes,entrada,saida,diarias,nmr_quarto) values(?,?,?,?,?)";
         try {
             pst = conexao.prepareStatement(mysql);
@@ -385,6 +377,11 @@ public class Hospedar extends javax.swing.JInternalFrame {
         nmr_quarto.setForeground(new java.awt.Color(0, 0, 0));
         nmr_quarto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         nmr_quarto.setOpaque(false);
+        nmr_quarto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nmr_quartoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -399,9 +396,7 @@ public class Hospedar extends javax.swing.JInternalFrame {
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(153, 153, 153)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel8)
                             .addComponent(entrada)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -544,6 +539,10 @@ public class Hospedar extends javax.swing.JInternalFrame {
         reservar();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void nmr_quartoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nmr_quartoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nmr_quartoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

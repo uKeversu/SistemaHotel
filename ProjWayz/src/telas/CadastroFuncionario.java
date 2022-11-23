@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import model.User;
 
 /**
  * @author kelwin_santos
@@ -31,7 +32,7 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
     }
 
     private void cadastrar() {
-        String sql = "insert into tb_usuario(txtNome,user_password,txtNascimento,txtCpf,nm_user,txtFone,cargo) values(?,?,?,?,?,?,?)";
+        String sql = "insert into tb_usuario(txtNome,user_password,txtNascimento,txtCpf,nm_user,txtFone,cargo, grauDeAcesso) values(?,?,?,?,?,?,?,?)";
         try {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtNome.getText());
@@ -40,13 +41,28 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
             pst.setString(4, txtCpf.getText());
             pst.setString(5, nm_user.getText());
             pst.setString(6, txtFone.getText());
+            
            
             comboCargo.getSelectedItem();
             String cargo;
             cargo = (String) comboCargo.getSelectedItem() + "";
             comboCargo.getSelectedIndex();
             pst.setString(7, cargo);
+           
+            int grauDeAcesso = 0;
             
+            if(cargo.equals("Recepcionista")){
+               
+            grauDeAcesso = 2;
+            pst.setInt(8, grauDeAcesso);
+            } 
+            
+            else if(cargo.equals("Estoquista")){
+                
+            grauDeAcesso = 1;
+            pst.setInt(8, grauDeAcesso);
+            }
+                    
             if (txtNome.getText().isEmpty() || user_password.getText().isEmpty()) {
 
                 JOptionPane.showMessageDialog(null, "Preenchimento de todos os campos obrigatórios!");
@@ -296,7 +312,7 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
                     .addComponent(nm_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(8, 8, 8)
                 .addComponent(comboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(139, 139, 139)
                 .addComponent(btnCadastrar)
@@ -319,7 +335,7 @@ public class CadastroFuncionario extends javax.swing.JInternalFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
